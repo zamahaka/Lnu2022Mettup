@@ -7,13 +7,14 @@ import io.flutter.plugin.common.MethodChannel
 
 class MainActivity : FlutterActivity() {
 
-    private val channel = "lnu.2022/device_name"
+    private val channelName = "lnu.2022/device_name"
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
+
         MethodChannel(
             flutterEngine.dartExecutor.binaryMessenger,
-            channel,
+            channelName,
         ).setMethodCallHandler { call, result ->
             if (call.method == "getDeviceName") {
                 result.success(getDeviceName())

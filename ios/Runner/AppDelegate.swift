@@ -8,12 +8,12 @@ import Flutter
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
-        let batteryChannel = FlutterMethodChannel(
+        let methodChannel = FlutterMethodChannel(
             name: "lnu.2022/device_name",
             binaryMessenger: controller.binaryMessenger
         )
         
-        batteryChannel.setMethodCallHandler({
+        methodChannel.setMethodCallHandler({
             [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
             // This method is invoked on the UI thread.
             guard call.method == "getDeviceName" else {

@@ -52,16 +52,6 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   HomeGridTile(
-                    title: "State management",
-                    icon: Icons.settings_rounded,
-                    background: const AssetImage(
-                      "assets/images/state_management.jpeg",
-                    ),
-                    onTap: () => Navigator.of(context).pushNamed(
-                      Routes.stateManagement,
-                    ),
-                  ),
-                  HomeGridTile(
                     title: "Widget animations",
                     icon: Icons.animation_rounded,
                     background: const AssetImage(
@@ -69,6 +59,16 @@ class HomePage extends StatelessWidget {
                     ),
                     onTap: () => Navigator.of(context).pushNamed(
                       Routes.animations,
+                    ),
+                  ),
+                  HomeGridTile(
+                    title: "State management",
+                    icon: Icons.settings_rounded,
+                    background: const AssetImage(
+                      "assets/images/state_management.jpeg",
+                    ),
+                    onTap: () => Navigator.of(context).pushNamed(
+                      Routes.stateManagement,
                     ),
                   ),
                   HomeGridTile(

@@ -16,7 +16,7 @@ class WidgetsPage extends StatelessWidget {
           WidgetsListTile(
             image: AssetImage("assets/images/widgets_example.png"),
             title: "Widget",
-            description: Text(
+            body: Text(
               "Flutter widgets are built using a modern framework that takes inspiration from React.\n"
               "The central idea is that you build your UI out of widgets.\n"
               "Widgets describe what their view should look like given their current configuration and state.\n"
@@ -26,12 +26,12 @@ class WidgetsPage extends StatelessWidget {
           WidgetsListTile(
             image: AssetImage("assets/images/flutter_trees.png"),
             title: "Trees",
-            description: TreesDescription(),
+            body: TreesDescription(),
           ),
           WidgetsListTile(
             image: AssetImage("assets/images/widget_of_the_week.png"),
             title: "Examples",
-            description: WidgetExamplesDescription(),
+            body: WidgetExamplesDescription(),
           ),
         ],
       ),
@@ -40,15 +40,15 @@ class WidgetsPage extends StatelessWidget {
 }
 
 class WidgetsListTile extends StatelessWidget {
-  final String title;
-  final Widget description;
   final ImageProvider image;
+  final String title;
+  final Widget body;
 
   const WidgetsListTile({
     super.key,
-    required this.title,
-    required this.description,
     required this.image,
+    required this.title,
+    required this.body,
   }) : super();
 
   @override
@@ -62,8 +62,9 @@ class WidgetsListTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           ClipRRect(
-            borderRadius:
-                const BorderRadius.vertical(bottom: Radius.circular(16)),
+            borderRadius: const BorderRadius.vertical(
+              bottom: Radius.circular(16),
+            ),
             child: SizedBox(
               height: 226,
               child: Image(
@@ -86,7 +87,7 @@ class WidgetsListTile extends StatelessWidget {
                 const SizedBox(height: 8),
                 DefaultTextStyle(
                   style: Theme.of(context).textTheme.bodyMedium!,
-                  child: description,
+                  child: body,
                 ),
               ],
             ),
@@ -98,9 +99,7 @@ class WidgetsListTile extends StatelessWidget {
 }
 
 class TreesDescription extends StatelessWidget {
-  const TreesDescription({
-    super.key,
-  }) : super();
+  const TreesDescription({super.key}) : super();
 
   @override
   Widget build(BuildContext context) {

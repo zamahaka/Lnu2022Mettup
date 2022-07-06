@@ -3,7 +3,6 @@ import 'package:lnu2022mettup/presentation/shared/Scale.dart';
 
 class GradientBackgroundData {
   final Color bgColor;
-
   final Color gradientColor;
 
   final Scale scale;
